@@ -17,6 +17,8 @@ l_co     = layout.layer(pya.LayerInfo(6, 0))
 l_m1     = layout.layer(pya.LayerInfo(8, 0))
 l_pimp   = layout.layer(pya.LayerInfo(14, 0))
 l_nwell  = layout.layer(pya.LayerInfo(31, 0))
+l_label  = layout.layer(pya.LayerInfo(63, 0))
+
 
 # Draw shapes
 top.shapes(l_active).insert(pya.Box(290, -(l/2+230), 290+w, (l/2+230)))
@@ -25,6 +27,7 @@ top.shapes(l_co).insert(    pya.Box(-80,  -80,   80,  80))
 top.shapes(l_m1).insert(    pya.Box(-80, -130,   80, 130))
 top.shapes(l_pimp).insert(  pya.Box(-10, -(l/2+410),  590+w, (l/2+410)))
 top.shapes(l_nwell).insert( pya.Box(-30, -(l/2+640),  610+w, (l/2+640)))
+top.shapes(l_label).insert( pya.Box(-240, -(l/2+640),  560+w, (l/2+640)))
 
 # Save GDS
 layout.write("switched_pmos_cascode.gds")
