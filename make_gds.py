@@ -27,7 +27,7 @@ top.shapes(l_co).insert(    pya.Box(-80,  -80,   80,  80))
 top.shapes(l_m1).insert(    pya.Box(-80, -130,   80, 130))
 top.shapes(l_pimp).insert(  pya.Box(-10, -(l/2+410),  590+w, (l/2+410)))
 top.shapes(l_nwell).insert( pya.Box(-30, -(l/2+640),  610+w, (l/2+640)))
-top.shapes(l_label).insert( pya.Box(-240, -(l/2+640),  560+w, (l/2+640)))
+top.shapes(l_label).insert( pya.Box(-190, -(l/2+640),  610+w, (l/2+640)))
 
 # Save GDS
 layout.write("switched_pmos_cascode.gds")
