@@ -7,8 +7,8 @@ layout.dbu = 0.001  # 1 nm units
 top = layout.create_cell("SWITCHED_PMOS_CASCODE")
 
 # Parameters
-l = 200
-w = 400
+l = 300
+w = 300
 
 # Layers
 l_active = layout.layer(pya.LayerInfo(1, 0))
