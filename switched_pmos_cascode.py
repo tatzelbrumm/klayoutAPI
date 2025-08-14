@@ -38,14 +38,17 @@ class SwitchedPMOSCascode(pya.PCellDeclarationHelper):
         shapes = self.cell.shapes
         lhalf=self.l//2
         w=self.w
+        whalf=w//2
         # Draw some simple geometry (database units)
-        shapes(ly_active).insert(pya.Box(290, -(lhalf+230), 290+w, (lhalf+230)))
+        shapes(ly_active).insert(pya.Box(290, -(lhalf+230), 290+w, (lhalf+340)))
         shapes(ly_po).insert(    pya.Box(-150, -lhalf, 470+w, lhalf))
         shapes(ly_co).insert(    pya.Box(-80,  -80,   80,  80))
+        shapes(ly_co).insert(    pya.Box(whalf+210, lhalf+110, whalf+370, lhalf+270))
         shapes(ly_m1).insert(    pya.Box(-80, -130,   80, 130))
-        shapes(ly_pimp).insert(  pya.Box(-10, -(lhalf+410),  590+w, (lhalf+410)))
-        shapes(ly_nwell).insert( pya.Box(-30, -(lhalf+640),  610+w, (lhalf+640)))
-        shapes(ly_pr).insert(    pya.Box(-190, -(lhalf+640),  610+w, (lhalf+640)))
+        shapes(ly_m1).insert(    pya.Box(whalf+160, lhalf+110, whalf+420, lhalf+270))
+        shapes(ly_pimp).insert(  pya.Box(-10, -(lhalf+410),  590+w, (lhalf+520)))
+        shapes(ly_nwell).insert( pya.Box(-30, -(lhalf+640),  610+w, (lhalf+650)))
+        shapes(ly_pr).insert(    pya.Box(-190, -(lhalf+640),  610+w, (lhalf+650)))
 
 class PMOSSourcesLib(pya.Library):
     def __init__(self):
