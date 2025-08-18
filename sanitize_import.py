@@ -55,8 +55,8 @@ def explode_1d_arefs(cell):
     for ca in to_delete:
         cell.erase(ca)
 
-for c in sly.each_cell():
-    explode_1d_arefs(c)
+#for c in sly.each_cell():
+#    explode_1d_arefs(c)
 
 # --- create a destination cell and copy the full tree into it ---
 src_top = sly.top_cell()
