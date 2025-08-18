@@ -11,7 +11,7 @@ cell = layout.top_cell()
 layer_idxs  = layout.layer_indexes()   # integer layer handles
 layer_infos = layout.layer_infos()     # corresponding pya.LayerInfo
 
-# 4) Iterate all shapes, handling boxes & polygons
+# 4) Iterate all shapes, handling boxes, polygons, paths, text, pins
 for idx, info in zip(layer_idxs, layer_infos):
     layer_no, datatype = info.layer, info.datatype
     shapes = cell.shapes(idx)
@@ -30,6 +30,19 @@ for idx, info in zip(layer_idxs, layer_infos):
             pts = [(pt.x, pt.y) for pt in poly.each_point()]
             print(f"Layer {layer_no}, DType {datatype}, Polygon #{i}:")
             print(f"  {len(pts)} points → {pts}")
+        elif shape.is_path():
+            # path
+            path = shape.path
+            pts = [(pt.x, pt.y) for pt in path.each_point()]
+            width = path.width
+            print(f"Layer {layer_no}, DType {datatype}, Path #{i}:")
+            print(f"  Width = {width}, Points → {pts}")
+        elif shape.is_text():
+            # text
+            text = shape.text
+            print(f"Layer {layer_no}, DType {datatype}, Text #{i}:")
+            print(f"  Text = '{text.string}', at ({text.trans.disp.x}, {text.trans.disp.y})")
         else:
             # other shapes (paths, texts…) if you care
-            print(f"Layer {layer_no}, DType {datatype}, Shape #{i}: unhandled type {shape.shape_type}")
+            print(f"Layer {layer_no}, DType {datatype}, Shape #{i}: Unhandled type {shape.shape_type}")
+
