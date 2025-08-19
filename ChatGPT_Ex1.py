@@ -2,7 +2,7 @@ import klayout.db as pya
 
 # 1) Read the GDS
 layout = pya.Layout()
-layout.read("pcascsrc.gds")
+layout.read("pcsource.gds")
 
 # 2) Grab the top cell
 cell = layout.top_cell()
